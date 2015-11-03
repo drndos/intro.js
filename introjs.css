@@ -77,7 +77,10 @@ tr.introjs-showElement > th {
 
 .introjs-helperLayer *,
 .introjs-helperLayer *:before,
-.introjs-helperLayer *:after {
+.introjs-helperLayer *:after,
+.introjs-tooltipReferenceLayer *,
+.introjs-tooltipReferenceLayer *:before,
+.introjs-tooltipReferenceLayer *:after {
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
       -ms-box-sizing: content-box;
@@ -88,8 +91,6 @@ tr.introjs-showElement > th {
 .introjs-helperNumberLayer {
   position: absolute;
   visibility: visible;
-  top: -16px;
-  left: -16px;
   z-index: 9999999999 !important;
   padding: 2px;
   font-family: Arial, verdana, tahoma;
@@ -113,6 +114,23 @@ tr.introjs-showElement > th {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3019', endColorstr='#cf0404', GradientType=0); /* IE6-9 */
   filter: progid:DXImageTransform.Microsoft.Shadow(direction=135, strength=2, color=ff0000); /* IE10 text shadows */
   box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+
+.introjs-helperNumberLayer.top-left {
+  top: -16px;
+  left: -16px;
+}
+.introjs-helperNumberLayer.top-right{
+  top: -16px;
+  right: -16px;
+}
+.introjs-helperNumberLayer.bottom-left {
+  bottom: -16px;
+  left: -16px;
+}
+.introjs-helperNumberLayer.bottom-right{
+  top: -16px;
+  right: -16px;
 }
 
 .introjs-arrow {

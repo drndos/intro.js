@@ -133,7 +133,8 @@
             step: parseInt(currentElement.getAttribute('data-step'), 10),
             tooltipClass: currentElement.getAttribute('data-tooltipClass'),
             highlightClass: currentElement.getAttribute('data-highlightClass'),
-            position: currentElement.getAttribute('data-position') || this._options.tooltipPosition
+            position: currentElement.getAttribute('data-position') || this._options.tooltipPosition,
+            numberPosition: currentElement.getAttribute('data-numberPosition'),
           };
         }
       }
@@ -160,7 +161,8 @@
             step: nextStep + 1,
             tooltipClass: currentElement.getAttribute('data-tooltipClass'),
             highlightClass: currentElement.getAttribute('data-highlightClass'),
-            position: currentElement.getAttribute('data-position') || this._options.tooltipPosition
+            position: currentElement.getAttribute('data-position') || this._options.tooltipPosition,
+            numberPosition: currentElement.getAttribute('data-numberPosition'),
           };
         }
       }
@@ -459,6 +461,12 @@
     }
 
     tooltipLayer.className = ('introjs-tooltip ' + tooltipCssClass).replace(/^\s+|\s+$/g, '');
+
+    var currentNumberPosition = this._introItems[this._currentStep].numberPosition;
+    if (currentNumberPosition === undefined){
+      currentNumberPosition = 'left';
+    }
+    helperNumberLayer.className = 'introjs-helperNumberLayer '+currentNumberPosition;
 
     currentTooltipPosition = this._introItems[this._currentStep].position;
     if ((currentTooltipPosition == "auto" || this._options.tooltipPosition == "auto")) {
